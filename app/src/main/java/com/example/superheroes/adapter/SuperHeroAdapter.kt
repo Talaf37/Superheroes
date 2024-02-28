@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroes.R
 import com.example.superheroes.data.Superhero
 import com.example.superheroes.databinding.ItemSuperheroBinding
+import com.squareup.picasso.Picasso
 
 class SuperheroAdapter(private var items:List<Superhero> = listOf()) : RecyclerView.Adapter<SuperheroViewHolder>() {
 
@@ -32,6 +33,6 @@ class SuperheroViewHolder(val binding:ItemSuperheroBinding) : RecyclerView.ViewH
 
     fun render(superhero: Superhero) {
         binding.nameTextView.text = superhero.name
-        binding.photoImageView.setImageResource(R.drawable.baseline_audio_file_24)
+        Picasso.get().load(superhero.image.url).into(binding.photoImageView)
     }
 }

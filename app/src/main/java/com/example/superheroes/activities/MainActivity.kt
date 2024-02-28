@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.superheroes.R
 import com.example.superheroes.adapter.SuperheroAdapter
@@ -78,10 +78,10 @@ class MainActivity : AppCompatActivity() {
             runOnUiThread {
                 // Modificar UI
                 if (response.body() != null) {
-                    Log.i("HTTP", "respuesta correcta :)")
+                    Log.i("HTTP", "respuesta correcta :D")
                     adapter.updateItems(response.body()?.results)
                 } else {
-                    Log.i("HTTP", "respuesta erronea :(")
+                    Log.i("HTTP", "respuesta erronea ;(")
                 }
             }
         }

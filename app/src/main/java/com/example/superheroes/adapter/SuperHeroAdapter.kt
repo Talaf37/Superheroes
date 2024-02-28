@@ -1,9 +1,9 @@
 package com.example.superheroes.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.superheroes.R
 import com.example.superheroes.data.Superhero
 import com.example.superheroes.databinding.ItemSuperheroBinding
 import com.squareup.picasso.Picasso
@@ -22,8 +22,9 @@ class SuperheroAdapter(private var items:List<Superhero> = listOf()) : RecyclerV
         //holder.itemView.setOnClickListener { onClickListener(position) }
     }
 
-    fun updateItems(results: List<Superhero>?) {
-        items = results!!
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateItems(results: List<Superhero>) {
+        items = results
         notifyDataSetChanged()
     }
 }
